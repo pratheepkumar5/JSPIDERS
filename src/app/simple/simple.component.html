@@ -1,0 +1,115 @@
+<!-- <div>
+  <h1 class="text-success" *ngIf="users.length > 0">
+    users are here
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let x of users">{{ x }}</li>
+    </ul>
+  </h1>
+</div>
+
+<div>
+  <h1 class="text-danger" *ngIf="users.length == 0">no users are here</h1>
+</div> -->
+<!-- <div class="container">
+  <div *ngIf="users.length > 0; then userList; else noUserList"></div>
+  <ng-template #userList>
+    <ul class="list-group">
+      <li
+        class="list-group-item mt-2"
+        *ngFor="
+          let a of users;
+          even as isEven;
+          index as i;
+          odd as isOdd;
+          first as isFirst;
+          last as isLast
+        "
+      >
+        <span class="badge badge-dark p-2 mr-2">{{ i + 1 }}</span>
+        {{ a }}
+        <span class="badge badge-success float-right " *ngIf="isEven"
+          >even</span
+        >
+        <span class="badge badge-danger float-right " *ngIf="isOdd">odd</span>
+        <span class="badge badge-primary float-right  " *ngIf="isFirst"
+          >First</span
+        >
+        <span class="badge badge-primary float-right " *ngIf="isLast"
+          >Last</span
+        >
+      </li>
+    </ul>
+  </ng-template>
+  <ng-template #noUserList>
+    <h1 class="text-danger">No user here</h1>
+  </ng-template>
+</div> -->
+
+<!-- <div [hidden]="users.length == 1">hello hidden user</div>
+<div [hidden]="users.length > 0">hello NO hidden user</div> -->
+
+<!-- <span [ngSwitch]="color">
+  <p *ngSwitchCase="'red'">
+    <span class="text-danger">red color here</span>
+  </p>
+  <p *ngSwitchCase="green">
+    <span class="text-success">red color here</span>
+  </p>
+  <p *ngSwitchDefault>
+    <span class="text-dark">no color display</span>
+  </p>
+</span> -->
+<!-- <button [class.btn]="isBtn">submit</button> -->
+<button [ngClass]="'prathi manu'">submit</button>
+<button [ngClass]="'btn btn-dark'">submit</button
+><!--string way-->
+
+<button [ngClass]="['btn', 'btn-success']">submit</button>
+<!--array way-->
+<button [ngClass]="{ btn: true, 'btn-danger': true }">submit</button
+><!--object way-->
+
+<!-- class only change behevior of the class-->
+<hr />
+
+<div class="container">
+  <button (click)="toggleState()">add dynamic class to div</button>
+  <div [ngClass]="dynamicCss()">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore dolorum
+    ad iste sint voluptatum dicta corrupti fuga, debitis, animi laudantium et
+    nemo aliquam? Laborum nulla harum ea facere quaerat non alias minus nam
+    perferendis. Vel distinctio consectetur quo voluptate ipsum, sapiente totam
+    placeat modi aut, blanditiis id excepturi ducimus illum velit consequuntur
+    tempora qui aliquam quis ea alias? Tempore ad, sunt alias vitae et velit
+    eligendi voluptatibus nesciunt nihil molestiae quis. Quis eos quod iure
+    alias aliquid amet at unde ab in sequi sunt nam soluta possimus esse error,
+    doloribus excepturi dolor dolores nisi atque. Libero natus porro provident!
+    Earum.
+  </div>
+</div>
+<!--ngStyle-->
+<div class="container">
+  <ul class="list-group">
+    <li
+      class="list-group-item mt-2"
+      *ngFor="let b of user"
+      [ngStyle]="{ color: b.gender === 'male' ? 'blue' : 'green' }"
+    >
+      {{ b.name }}
+      {{ b.age }}
+      {{ b.gender }}
+      {{ b.country }}
+    </li>
+  </ul>
+</div>
+<hr />
+<div class="container" anu>
+  <div class="form">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+      ratione corrupti fugit dolor vitae reprehenderit quibusdam, recusandae
+      repellendus optio quaerat minus provident tempora commodi minima
+      distinctio, nostrum velit officia ex.
+    </p>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="col-md-4 offset-4 mt-2 card">
+    <div class="card-body">
+      <h1 class="display-5 text-center text-uppercase">contact</h1>
+      <form #form="ngForm" (ngSubmit)="submit(form)">
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            class="form-control"
+            placeholder="enter firstname"
+            required
+            ngModel
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastname">Username</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            class="form-control"
+            placeholder="enter lastname"
+            required
+            ngModel
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            name="email"
+            placeholder="enter email"
+            required
+            ngModel
+          />
+        </div>
+        <div class="form-group">
+          <label for="numder">Phone Nunber</label>
+          <input
+            type="tel"
+            id="number"
+            class="form-control"
+            name="number"
+            placeholder="enter phonenumber"
+            required
+            ngModel
+          />
+        </div>
+        <div class="form-group">
+          <label *ngFor="let gender of genderList">
+            <input
+              type="radio"
+              ngModel
+              name="gender"
+              value="{{ gender.name }} "
+            />
+            {{ gender.name }}
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Country</label>
+          <select name="country" class="form-control" ngModel>
+            <option
+              *ngFor="let country of countryList; index as i"
+              [ngValue]="i"
+            >
+              {{ country }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="enter password"
+            class="form-control"
+            ngModel
+          />
+        </div>
+        <div>
+          <button class="btn btn-primary btn-block" [disabled]="!form.valid">
+            submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

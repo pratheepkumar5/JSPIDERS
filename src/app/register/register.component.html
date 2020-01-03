@@ -1,0 +1,60 @@
+<div class="container">
+  <div class=" card">
+    <div class="card-body">
+      <ng-content select="h1"></ng-content>
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            formControlName="username"
+            type="text"
+            id="username"
+            name="username"
+            class="form-control"
+            placeholder="enter username"
+          />
+
+          <div
+            class="text-danger mt-2"
+            *ngIf="username.touched && username.invalid"
+          >
+            <p *ngIf="username.errors.required">user name is required</p>
+            <p *ngIf="username.errors.minlength">
+              user name should be minimum 3 charecter
+            </p>
+            <p *ngIf="username.errors.removeSpace">don't give any space😃😄</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            id="password"
+            name="password"
+            placeholder="enter password"
+            class="form-control"
+          />
+          <div
+            class="text-danger mt-2"
+            *ngIf="password.touched && password.invalid"
+          >
+            <p *ngIf="password.errors.required">password is required</p>
+            <p *ngIf="password.errors.minlength">
+              password should be minimum 3 charecter
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <!-- <button class="btn btn-primary btn-block" [disabled]="!form.valid">
+            submit
+          </button> -->
+          <ng-content select="button"></ng-content>
+          <ng-content select="div"></ng-content>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

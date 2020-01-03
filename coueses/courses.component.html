@@ -1,0 +1,50 @@
+<!-- <div id="template">
+  <h1>I am a headline made with HTML</h1>
+  <p>
+    And I am a simple text paragraph. The color of this text is styled with CSS.
+    Click the button below to remove me through the power JavaScript.
+  </p>
+  <button>Hide the text above</button>
+</div> -->
+
+<!-- <h1>angualar componet here</h1>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let x of languages">{{ x }}</li>
+</ul> -->
+<button class="btn btn-primary mt-2 mb-2" (click)="addnewuser()">
+  add new users
+</button>
+<table class="table table-striped">
+  <tr>
+    <th>sl.no.</th>
+    <th>name</th>
+    <th>id</th>
+    <th>photo</th>
+    <th>designation</th>
+    <th>doj</th>
+    <th>education</th>
+    <th>dob</th>
+    <th>companyname</th>
+    <th>salary</th>
+    <th>location</th>
+    <th>delete User</th>
+  </tr>
+  <tr *ngFor="let u of users; index as i" class="table-light text-dark">
+    <td>{{ i + 1 }}</td>
+    <td>{{ u.name }}</td>
+    <td>{{ u.id }}</td>
+    <td><img class="img-fluid rounded-circle" src="{{ u.photo }}" /></td>
+    <td>{{ u.designation }}</td>
+    <td>{{ u.doj }}</td>
+    <td>{{ u.education }}</td>
+    <td>{{ u.dob }}</td>
+    <td>{{ u.companyname }}</td>
+    <td>{{ u.salary }}</td>
+    <td>{{ u.location }}</td>
+    <td>
+      <button class="btn btn-danger btn-sm" (click)="removeUser(u)">
+        remove
+      </button>
+    </td>
+  </tr>
+</table>

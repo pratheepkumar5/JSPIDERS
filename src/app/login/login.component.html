@@ -1,0 +1,84 @@
+<!-- <div class="col-md-4 offset-4 card mt-4">
+  <div class="card-body">
+    <h1 class="text-center">{{ "Hii Pratheep " + login }}</h1>
+    <form action="">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-block btn-success">Login</button>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="col-md-4 offset-4 mt-2 card">
+    <div class="card-body">
+      <h1 class="display-5 text-center text-uppercase">Login</h1>
+      <form #form="ngForm" (ngSubmit)="submit(form)">
+        <div class="form-group">
+          <label for="username">Login</label>
+          <input
+            type="text"
+            id="username"
+            ngModel
+            name="username"
+            #username="ngModel"
+            (change)="log(username)"
+            placeholder="enter username"
+            class="form-control"
+            required
+            minlength="3"
+            maxlength="10"
+          />
+          <div
+            *ngIf="username.touched && username.invalid"
+            class=" text-danger m-2"
+          >
+            <P *ngIf="username.errors.required">username required</P>
+            <P *ngIf="username.errors.minlength"
+              >username should be ninimum 3 character</P
+            >
+            <!-- <P *ngIf="username.errors.pattern">username should match</P> -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            ngModel
+            name="password"
+            placeholder="enter password"
+            class="form-control"
+            required
+            minlength="3"
+            maxlength="jspider"
+            #password="ngModel"
+          />
+          <div
+            *ngIf="password.touched && password.invalid"
+            class="text-danger m-2"
+          >
+            <P *ngIf="password.errors.required">password required</P>
+            <P *ngIf="password.errors.minlength"
+              >password should be ninimum 3 character</P
+            >
+            <!-- <P *ngIf="password.errors.pattern">password should match</P> -->
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success btn-block" [disabled]="!form.valid">
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

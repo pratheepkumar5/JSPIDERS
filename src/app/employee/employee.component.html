@@ -1,0 +1,90 @@
+<!-- <ul class="list-group" *ngFor="let emp of employee">
+  <li class="list-group-item mt-2">EmpID : {{ emp.emp_id }}</li>
+  <li class="list-group-item mt-2">
+    <img src="{{ emp.emp_photo }} " alt="" />
+  </li>
+  <li class="list-group-item mt-2">EmpName : {{ emp.emp_name }}</li>
+  <li class="list-group-item mt-2">
+    Emp_designation : {{ emp.emp_designation }}
+  </li>
+  <li class="list-group-item mt-2">Emp salary : {{ emp.emp_salary }}</li>
+  <li class="list-group-item mt-2">Emp_location : {{ emp.emp_location }}</li>
+  <li class="list-group-item mt-2">
+    Emp_education : {{ emp.emp_designation }}
+  </li>
+  <li class="list-group-item mt-2">Emp Date of Join : {{ emp.emp_doj }}</li>
+</ul> -->
+
+<!-- <img [src]="ImageUrl" />
+{{ isActive }}
+<button class="btn btn-danger mt-2" [class.active]="isActive">submit</button> -->
+<!-- 
+<table>
+  <tr>
+    <td [colSpan]="colSpan">colspan here</td>
+    <td>colspan here</td>
+  </tr>
+</table> -->
+
+<!-- <div [style.backgroundColor]="isActive ? 'red' : 'green'">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto beatae sint
+  delectus iste eos nisi assumenda porro fuga dolore amet ullam reiciendis vero
+  itaque, perspiciatis eveniet fugit pariatur quasi eius!
+</div> -->
+
+<!-- <button (click)="click($event)">Submit</button> -->
+<!-- 
+<input
+  type="text"
+  name=""
+  id=""
+  class="form-control mt-2"
+  placeholder="enter  a key"
+  (keyup.enter)="username($event)"
+/>
+
+<input
+  type="text"
+  class="form-control mt-2"
+  placeholder="enter  a key"
+  #email
+  (keyup.enter)="enterEmail(email.value)"
+/> -->
+<!-- two way data binding-- directive name is ngModle -->
+<input
+  type="text"
+  class=" form-control mt-2"
+  placeholder="enter name"
+  [(ngModel)]="username1"
+/>
+
+<input
+  type="text"
+  class=" form-control mt-2"
+  placeholder="enter email"
+  [(ngModel)]="email"
+/>
+
+<input
+  type="text"
+  class=" form-control mt-2"
+  placeholder="enter phonenum"
+  [(ngModel)]="phonenum"
+/>
+
+<textarea
+  name=""
+  id=""
+  cols="30"
+  rows="10"
+  class=" form-control"
+  [(ngModel)]="description"
+></textarea>
+
+<h1>{{ username1 }}</h1>
+<h1>{{ email }}</h1>
+<h1>{{ phonenum }}</h1>
+<p>{{ description }}</p>
+
+<!--  ngModel only works with forms elements -->
+<!-- to use ngModel directive should import FormsModule in app.module.ts -->
